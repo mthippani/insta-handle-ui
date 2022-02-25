@@ -20,11 +20,7 @@ export class ProfileSearchComponent implements OnInit, OnDestroy {
    this.form = fb.group({profileName:['']})
    this.form.valueChanges.pipe(filter(val=>val),debounceTime(600),takeUntil(this.destroy$))
    .subscribe(form=>{
-     console.log("Form",form)
      this.profileFacade.dispatch(searchProfile({searchTerm:form.profileName}));
-    // this.profileService.getProfileInfo(form?.profileName).subscribe(res=>{
-    //   console.log("Response",form?.profileName,res)
-    // })   
    }
    )
   }

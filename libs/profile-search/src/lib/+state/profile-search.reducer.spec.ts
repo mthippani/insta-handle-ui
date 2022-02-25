@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 
 import * as ProfileSearchActions from './profile-search.actions';
-import { ProfileSearchEntity } from './profile-search.models';
+import { ProfileInfo, ProfileSearchEntity } from './profile-search.models';
 import { State, initialState, reducer } from './profile-search.reducer';
 
 describe('ProfileSearch Reducer', () => {
@@ -15,13 +15,8 @@ describe('ProfileSearch Reducer', () => {
 
   describe('valid ProfileSearch actions', () => {
     it('loadProfileSearchSuccess should return the list of known ProfileSearch', () => {
-      const profileSearch = [
-        createProfileSearchEntity('PRODUCT-AAA'),
-        createProfileSearchEntity('PRODUCT-zzz'),
-      ];
-      const action = ProfileSearchActions.loadProfileSearchSuccess({
-        profileSearch,
-      });
+      const profile = { "dateAndTime": "2022-02-25T03:02:30.557Z", "biography": "The curious hustlers powering the leading all-in-one #influencermarketing platform.", "fullName": "Sample", "followersCount": 2252, "post": { "url": "https://www.instagram.com/p/CLs-IAeIMD0O/?__a=1", "mediaURL": "https://www.facebook.com/", "numberOfLikes": 225, "numberOfComments": 100, "type": "carousel" } } as unknown as ProfileInfo
+      const action = ProfileSearchActions.loadProfileSearchSuccess({profile});
 
       const result: State = reducer(initialState, action);
 

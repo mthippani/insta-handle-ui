@@ -7,20 +7,6 @@ import * as ProfileSearchSelectors from './profile-search.selectors';
 
 @Injectable()
 export class ProfileSearchFacade {
-  /**
-   * Combine pieces of state using createSelector,
-   * and expose them as observables through the facade.
-   */
-  loaded$ = this.store.pipe(
-    select(ProfileSearchSelectors.getProfileSearchLoaded)
-  );
-  allProfileSearch$ = this.store.pipe(
-    select(ProfileSearchSelectors.getAllProfileSearch)
-  );
-  selectedProfileSearch$ = this.store.pipe(
-    select(ProfileSearchSelectors.getSelected)
-  );
-
   profile$ = this.store.pipe(
     select(ProfileSearchSelectors.getProfile)
   );

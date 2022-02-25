@@ -36,33 +36,11 @@ describe('ProfileSearch Selectors', () => {
   });
 
   describe('ProfileSearch Selectors', () => {
-    it('getAllProfileSearch() should return the list of ProfileSearch', () => {
-      const results = ProfileSearchSelectors.getAllProfileSearch(state);
-      const selId = getProfileSearchId(results[1]);
-
-      expect(results.length).toBe(3);
-      expect(selId).toBe('PRODUCT-BBB');
-    });
-
-    it('getSelected() should return the selected Entity', () => {
-      const result = ProfileSearchSelectors.getSelected(
+    it('getProfile() should return the selected Entity', () => {
+      const result = ProfileSearchSelectors.getProfile(
         state
-      ) as ProfileSearchEntity;
-      const selId = getProfileSearchId(result);
-
-      expect(selId).toBe('PRODUCT-BBB');
-    });
-
-    it('getProfileSearchLoaded() should return the current "loaded" status', () => {
-      const result = ProfileSearchSelectors.getProfileSearchLoaded(state);
-
-      expect(result).toBe(true);
-    });
-
-    it('getProfileSearchError() should return the current "error" state', () => {
-      const result = ProfileSearchSelectors.getProfileSearchError(state);
-
-      expect(result).toBe(ERROR_MSG);
+      );
+      expect(result).not.toBeNull();
     });
   });
 });

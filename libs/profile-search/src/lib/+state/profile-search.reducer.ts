@@ -41,7 +41,6 @@ const profileSearchReducer = createReducer(
   on(
     ProfileSearchActions.loadProfileSearchSuccess,
     (state, { profile }) =>{
-      console.log('JSON.stringify',JSON.stringify(profile));
     return ({
       ...state,
       profile,
