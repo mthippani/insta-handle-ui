@@ -1,0 +1,29 @@
+{
+  "npmScope": "insta-handle",
+  "affected": {
+    "defaultBase": "undefined"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*",
+    "tsconfig.base.json": "*"
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "insta-handle",
+  "generators": {
+    "@nrwl/angular:application": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {}
+  }
+}

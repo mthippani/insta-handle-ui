@@ -1,0 +1,39 @@
+<div id="profile-details" class="details-container" *ngIf="profile$|async as profile">
+    <div class="row">
+        <mat-label>Full Name :</mat-label>
+        <span class="value">{{profile.fullName}}</span>
+    </div>
+    <div class="row">
+        <mat-label> Biography :</mat-label>
+        <span class="value">{{profile.biography}}</span>
+    </div>
+    <div class="row">
+        <mat-label> Date and Time :</mat-label>
+        <span class="value">{{profile.dateAndTime|date:'medium'}}</span>
+    </div>
+    <div class="row">
+        <mat-label> Followers Count :</mat-label>
+        <span class="value">{{profile.followersCount}}</span>
+    </div>
+    <div class="row">
+        <mat-label> Post Type :</mat-label>
+        <span class="value">{{profile.post?.type}}</span>
+    </div>
+    <div class="row">
+        <mat-label> Post URL :</mat-label>
+        <span class="value"><a [href]="profile.post?.url" target="_blank">{{profile.post?.url}}</a></span>
+    </div>
+    <div class="row">
+        <mat-label> Media URL :</mat-label>
+        <span class="value"><a [href]="profile.post?.mediaURL" target="_blank">{{profile.post?.mediaURL}}</a></span>
+    </div>
+    <div class="row">
+        <mat-label> Number of Likes :</mat-label>
+        <span class="value">{{profile.post?.numberOfLikes}}</span>
+    </div>
+    <div class="row">
+        <mat-label> Number of Comments :</mat-label>
+        <span class="value">{{profile.post?.numberOfComments}}</span>
+    </div>
+</div>
+

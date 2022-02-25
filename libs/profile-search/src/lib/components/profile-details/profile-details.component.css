@@ -1,0 +1,10 @@
+.details-container{
+ margin: 20px;
+}
+.row {
+ padding-bottom: 25px;
+}
+mat-label{
+ margin-right: 10px;
+ font-weight: 500;
+}

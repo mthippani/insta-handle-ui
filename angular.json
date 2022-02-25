@@ -1,7 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
   "projects": {
     "insta-handle": {
       "projectType": "application",
@@ -10,25 +9,25 @@
           "strict": true
         }
       },
-      "root": "",
-      "sourceRoot": "src",
+      "root": "apps/insta-handle",
+      "sourceRoot": "apps/insta-handle/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/insta-handle",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "outputPath": "dist/apps/insta-handle",
+            "index": "apps/insta-handle/src/index.html",
+            "main": "apps/insta-handle/src/main.ts",
+            "polyfills": "apps/insta-handle/src/polyfills.ts",
+            "tsConfig": "apps/insta-handle/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "apps/insta-handle/src/favicon.ico",
+              "apps/insta-handle/src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
+              "apps/insta-handle/src/styles.css"
             ],
             "scripts": []
           },
@@ -48,8 +47,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "apps/insta-handle/src/environments/environment.ts",
+                  "with": "apps/insta-handle/src/environments/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -86,23 +85,48 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "main": "apps/insta-handle/src/test.ts",
+            "polyfills": "apps/insta-handle/src/polyfills.ts",
+            "tsConfig": "apps/insta-handle/tsconfig.spec.json",
+            "karmaConfig": "apps/insta-handle/karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "apps/insta-handle/src/favicon.ico",
+              "apps/insta-handle/src/assets"
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
+              "apps/insta-handle/src/styles.css"
             ],
             "scripts": []
           }
         }
       }
+    },
+    "profile-search": {
+      "projectType": "library",
+      "root": "libs/profile-search",
+      "sourceRoot": "libs/profile-search/src",
+      "prefix": "insta-handle",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/profile-search"],
+          "options": {
+            "jestConfig": "libs/profile-search/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/profile-search/src/**/*.ts",
+              "libs/profile-search/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
     }
-  },
-  "defaultProject": "insta-handle"
+  }
 }
