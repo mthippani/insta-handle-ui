@@ -28,7 +28,7 @@ describe('ProfileSearchEffects', () => {
 
   describe('init$', () => {
     it('should work', () => {
-      actions = hot('-a-|', { a: ProfileSearchActions.init() });
+      actions = hot('-a-|', { a: ProfileSearchActions.searchProfile() });
 
       const expected = hot('-a-|', {
         a: ProfileSearchActions.loadProfileSearchSuccess({ profileSearch: [] }),
